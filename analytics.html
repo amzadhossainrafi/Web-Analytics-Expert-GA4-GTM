@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amzad Hossain Rafi - Analytics Expert</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #0066ff;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #0055cc;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .section-title p {
+            color: #777;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .service-category {
+            margin-bottom: 60px;
+            background: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .service-header {
+            background: var(--secondary);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .service-header i {
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+        
+        .service-header h3 {
+            font-size: 1.8rem;
+        }
+        
+        .service-content {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .service-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .service-item i {
+            color: var(--success);
+            margin-right: 10px;
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+        
+        /* Booking Section */
+        .booking {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            color: white;
+        }
+        
+        .booking-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .booking-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .booking-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            min-height: 700px;
+        }
+        
+        .booking-form h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .client {
+            display: flex;
+            align-items: center;
+        }
+        
+        .client img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .client-info h4 {
+            color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .footer-section p {
+            margin-bottom: 10px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin-right: 15px;
+            color: white;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .booking-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Toggle functionality for service categories */
+        .service-header {
+            transition: background-color 0.3s;
+        }
+        
+        .service-header:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytics Pro | Amzad Hossain Rafi</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#booking">Book a Call</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Amzad Hossain Rafi</h1>
+            <p>Expert Data Analyst & Marketing Strategist</p>
+            <p>Transforming data into actionable insights for business growth</p>
+            <a href="#booking" class="btn">Book a Consultation</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Analytics Services</h2>
+                <p>Comprehensive data analysis and marketing analytics solutions tailored to your business needs</p>
+            </div>
+            
+            <!-- Google Analytics 4 -->
+            <div class="service-category">
+                <div class="service-header">
+                    <i class="fas fa-chart-bar"></i>
+                    <h3>Google Analytics 4 (GA4)</h3>
+                </div>
+                <div class="service-content">
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Migrating UA to GA4</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Configure Google Analytics 4</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Enable Enhanced Ecommerce Tracking</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Tracking GA 4 Events from any web platform</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Tracking GA4 Events from server-side</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Setup Conversion Goal</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Import Goals in Google Ads</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Linked with Google Ads</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Setup UTM Tracking for campaigns</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Exploration Reports in GA4</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Fixing any issues relating to Google Analytics</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Google Tag Manager -->
+            <div class="service-category">
+                <div class="service-header">
+                    <i class="fas fa-tags"></i>
+                    <h3>Google Tag Manager</h3>
+                </div>
+                <div class="service-content">
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Install Tag Manager on Shopify, Woocommerce, Clickfunnels, Wix, Magento</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Configure Web and Server Container</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Setup and fix TAG, TRIGGER, AND VARIABLE</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Setup Facebook Pixel/Conversion API, Google Analytics 4, Google Ads Conversion Tracking, Google Remarketing Tag with GTM</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Event setup for Facebook, Universal Analytics, Google Analytics 4, Twitter, TikTok, Pinterest</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Tracking Event from Server Container for Facebook, Google Ads, Google Remarketing, Google Analytics 4</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Setup and Fix Facebook and Google Ads Conversion API with GTM</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Facebook Pixel/Conversion API -->
+            <div class="service-category">
+                <div class="service-header">
+                    <i class="fab fa-facebook"></i>
+                    <h3>Facebook Pixel/Conversion API</h3>
+                </div>
+                <div class="service-content">
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Facebook Pixel Setup</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Facebook Conversion API Setup With GTM</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Facebook Server-Side Tracking</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Stape Server Setup</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Google Cloud Server Setup</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>PageView, ViewContent, AddToCart, InitiateCheckout, Purchase Event with dynamic value tracking</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>And any custom event tracking</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Fix All Pixel Error</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Fix Event deduplication error, Missing event_id, Missing value parameter for Purchase and AddToCart event</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Work with Shopify, WordPress/Woocommerce, Wix, Clickfunnels, Magento, PHP, Any Custom site</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Google Ads Conversion Tracking -->
+            <div class="service-category">
+                <div class="service-header">
+                    <i class="fab fa-google"></i>
+                    <h3>Google Ads Conversion Tracking and Remarketing Tag</h3>
+                </div>
+                <div class="service-content">
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Setup Google Ads Conversion Tracking with GTM</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Setup Google Ads Dynamic Remarketing Tag with GTM</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Setup Google Ads Website Conversion (Purchase, Begin Checkout, Add To Basket, View Item, Submit Lead Form, Contact)</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Setup Google Ads phone call tracking</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Google Analytics goal import</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Fixing any issues relating to Google Ads Conversion (Not tracking Conversion value, double conversion etc)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- E-commerce Analytics -->
+            <div class="service-category">
+                <div class="service-header">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>E-Commerce Analytics Consultation</h3>
+                </div>
+                <div class="service-content">
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Comprehensive e-commerce analytics consultation to optimize your website's tracking and analytics setup</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Review and analysis of your current tracking implementation and data flow to identify gaps and opportunities for improvement</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Recommendations for integrating additional e-commerce platforms or custom solutions to enhance tracking accuracy and data collection</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Customized strategies for setting up Enhanced Ecommerce Tracking and Conversion Goals specific to your business needs</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Assistance in setting up custom UTM tracking parameters for better campaign performance analysis</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Guidance on using Google Analytics 4 and Google Tag Manager to gain valuable insights into your e-commerce website's performance and user behavior</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Troubleshooting and fixing any issues related to e-commerce tracking and analytics</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cross-Platform Analytics -->
+            <div class="service-category">
+                <div class="service-header">
+                    <i class="fas fa-globe"></i>
+                    <h3>Cross-Platform Analytics Integration</h3>
+                </div>
+                <div class="service-content">
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Seamlessly integrate analytics across multiple platforms and devices for a unified view of user interactions and behavior</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Connect Google Analytics 4, Google Tag Manager, Facebook Pixel, and other analytics tools to ensure consistent and accurate data collection</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Set up cross-domain tracking to track user journeys that span across different websites or subdomains</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Implement server-side tracking for advanced data processing and tracking events from backend systems or APIs</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Provide advanced event tracking setup for various platforms, including Facebook, Twitter, TikTok, and Pinterest</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Enable data import and synchronization between Google Analytics 4 and Google Ads for better campaign optimization and attribution</span>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Offer tailored solutions for tracking and analyzing user interactions on various platforms, ensuring a comprehensive and holistic approach to data-driven decision-making</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking" id="booking">
+        <div class="container">
+            <div class="booking-container">
+                <div class="booking-content">
+                    <h2>Book a Consultation</h2>
+                    <p>Let's discuss how data analytics can transform your business. Schedule a call with me to explore opportunities for growth, optimization, and improved ROI.</p>
+                    <p>During our consultation, we'll review your current analytics setup, identify gaps, and create a strategy tailored to your business goals.</p>
+                    <p>Choose a time that works best for you using the calendar widget.</p>
+                </div>
+                <div class="booking-form">
+                    <h3>Schedule Your Session</h3>
+                    <!-- Calendly inline widget begin -->
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/arafi-uits/free-consultation-with-amzad-hossain-rafi" style="min-width:320px;height:700px;"></div>
+                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                    <!-- Calendly inline widget end -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Testimonials</h2>
+                <p>What my clients say about working with me</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"Amzad transformed our approach to data analytics. His insights helped us increase conversion rates by 37% in just three months."</p>
+                    <div class="client">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
+                        <div class="client-info">
+                            <h4>Michael Johnson</h4>
+                            <p>Marketing Director, TechCorp</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"The GA4 migration and tracking implementation provided by Amzad have been game-changers for our e-commerce business."</p>
+                    <div class="client">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
+                        <div class="client-info">
+                            <h4>Sarah Williams</h4>
+                            <p>CEO, StyleShop</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Working with Amzad helped us identify wasted ad spend and reallocate budget to high-performing channels through proper conversion tracking."</p>
+                    <div class="client">
+                        <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="Client">
+                        <div class="client-info">
+                            <h4>David Chen</h4>
+                            <p>COO, GrowthLabs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Me</h3>
+                    <p>Data analytics expert with over 7 years of experience helping businesses make data-driven decisions and optimize their marketing performance.</p>
+                </div>
+                <div class="footer-section">
+                        <h3>Contact Info</h3>
+                        <p><i class="fas fa-envelope"></i> 
+                        <a href="mailto:arafi.uits@gmail.com" class="contact-link">arafi.uits@gmail.com</a>
+                        </p>
+                        <p><i class="fas fa-phone"></i> 
+                        <a href="tel:+8801518643371" class="contact-link">+8801518643371</a>
+                        </p>
+                        <p><i class="fas fa-map-marker-alt"></i> 
+                        <a href="https://www.google.com/maps/place/Dhaka,+Bangladesh" target="_blank" class="contact-link">Dhaka, Bangladesh</a>
+                        </p>
+
+                        <style>
+                        .contact-link {
+                            color: white;
+                            text-decoration: none; /* removes underline */
+                        }
+                        .contact-link:hover {
+                            text-decoration: underline; /* optional hover effect */
+                        }
+                        </style>
+
+
+                <div class="footer-section">
+                    <h3>Connect With Me</h3>
+                    <div class="social-links">
+                        <a href="https://bd.linkedin.com/in/amzad-hossain-rafi-7b0a09215"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://x.com/_amzadhossain"><i class="fab fa-twitter"></i></a>
+                        <a href="https://github.com/amzadhossainrafi"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Amzad Hossain Rafi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add toggle functionality for service categories
+        document.querySelectorAll('.service-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                content.style.display = content.style.display === 'none' ? 'grid' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>
