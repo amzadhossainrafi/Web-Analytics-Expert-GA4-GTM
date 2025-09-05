@@ -5,341 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amzad Hossain Rafi - Analytics Expert</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #0066ff;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-            --success: #2ecc71;
-        }
-        
-        body {
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header Styles */
-        header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo i {
-            margin-right: 10px;
-            color: var(--accent);
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-        
-        /* Hero Section */
-        .hero {
-            padding: 100px 0;
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') no-repeat center center/cover;
-            color: white;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 1.5rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--accent);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn:hover {
-            background-color: #0055cc;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        /* Services Section */
-        .services {
-            padding: 80px 0;
-            background-color: white;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .section-title p {
-            color: #777;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .service-category {
-            margin-bottom: 60px;
-            background: var(--light);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .service-header {
-            background: var(--secondary);
-            color: white;
-            padding: 20px 30px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-        }
-        
-        .service-header i {
-            font-size: 1.5rem;
-            margin-right: 15px;
-        }
-        
-        .service-header h3 {
-            font-size: 1.8rem;
-        }
-        
-        .service-content {
-            padding: 30px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        
-        .service-item {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .service-item i {
-            color: var(--success);
-            margin-right: 10px;
-            margin-top: 4px;
-            flex-shrink: 0;
-        }
-        
-        /* Booking Section */
-        .booking {
-            padding: 80px 0;
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-            color: white;
-        }
-        
-        .booking-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-        
-        .booking-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .booking-form {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            min-height: 700px;
-        }
-        
-        .booking-form h3 {
-            color: var(--primary);
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        /* Testimonials */
-        .testimonials {
-            padding: 80px 0;
-            background-color: var(--light);
-        }
-        
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .testimonial-card {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .testimonial-card p {
-            font-style: italic;
-            margin-bottom: 20px;
-            color: #555;
-        }
-        
-        .client {
-            display: flex;
-            align-items: center;
-        }
-        
-        .client img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 15px;
-        }
-        
-        .client-info h4 {
-            color: var(--primary);
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 60px 0 30px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-section h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--accent);
-        }
-        
-        .footer-section p {
-            margin-bottom: 10px;
-        }
-        
-        .social-links a {
-            display: inline-block;
-            margin-right: 15px;
-            color: white;
-            font-size: 1.2rem;
-            transition: color 0.3s;
-        }
-        
-        .social-links a:hover {
-            color: var(--accent);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .booking-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .service-content {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* Toggle functionality for service categories */
-        .service-header {
-            transition: background-color 0.3s;
-        }
-        
-        .service-header:hover {
-            background-color: #2980b9;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Header -->
@@ -363,12 +29,67 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Amzad Hossain Rafi</h1>
-            <p>Expert Data Analyst & Marketing Strategist</p>
-            <p>Transforming data into actionable insights for business growth</p>
-            <a href="#booking" class="btn">Book a Consultation</a>
+            <div class="hero-content">
+                <div class="pre-title animated">Data-Driven Marketing Solutions</div>
+                <h1 class="hero-title animated delay-1">Digital Marketing Agency Services</h1>
+                <p class="hero-subtitle animated delay-1">Measure Every Action, Test Rapidly, and Gain New Insights for Smarter Data-Driven Marketing</p>
+                <p class="hero-description animated delay-2">We build high-converting marketing campaigns from channel management to funnel creation, optimizing all points in between, for a frictionless growth system.</p>
+                
+                <div class="features">
+                    <div class="feature-item animated delay-2">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <span class="feature-text">Full Tracking Setup</span>
+                    </div>
+                    <div class="feature-item animated delay-3">
+                        <div class="feature-icon">
+                            <i class="fas fa-search-dollar"></i>
+                        </div>
+                        <span class="feature-text">Conversion Attribution Measurement</span>
+                    </div>
+                    <div class="feature-item animated delay-3">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <span class="feature-text">Customized Reporting Dashboards</span>
+                    </div>
+                    <div class="feature-item animated delay-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <span class="feature-text">Expert Analysis & Actionable Insights</span>
+                    </div>
+                </div>
+                
+                <div class="cta-buttons">
+                    <a href="#booking" class="btn btn-primary animated delay-4">
+                        <i class="fas fa-calendar-check"></i> Schedule a Meeting
+                    </a>
+                    <a href="#call" class="btn btn-secondary animated delay-4">
+                        <i class="fas fa-phone-alt"></i> Request a Call
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
+
+    <script>
+        // Simple animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animated');
+            
+            animatedElements.forEach(element => {
+                element.style.opacity = '0';
+            });
+            
+            setTimeout(() => {
+                animatedElements.forEach(element => {
+                    element.style.opacity = '1';
+                });
+            }, 100);
+        });
+    </script>
 
     <!-- Services Section -->
     <section class="services" id="services">
@@ -704,27 +425,17 @@
                     <p>Data analytics expert with over 7 years of experience helping businesses make data-driven decisions and optimize their marketing performance.</p>
                 </div>
                 <div class="footer-section">
-                        <h3>Contact Info</h3>
-                        <p><i class="fas fa-envelope"></i> 
-                        <a href="mailto:arafi.uits@gmail.com" class="contact-link">arafi.uits@gmail.com</a>
-                        </p>
-                        <p><i class="fas fa-phone"></i> 
-                        <a href="tel:+8801518643371" class="contact-link">+8801518643371</a>
-                        </p>
-                        <p><i class="fas fa-map-marker-alt"></i> 
-                        <a href="https://www.google.com/maps/place/Dhaka,+Bangladesh" target="_blank" class="contact-link">Dhaka, Bangladesh</a>
-                        </p>
-
-                        <style>
-                        .contact-link {
-                            color: white;
-                            text-decoration: none; /* removes underline */
-                        }
-                        .contact-link:hover {
-                            text-decoration: underline; /* optional hover effect */
-                        }
-                        </style>
-
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-envelope"></i> 
+                    <a href="mailto:arafi.uits@gmail.com" class="contact-link">arafi.uits@gmail.com</a>
+                    </p>
+                    <p><i class="fas fa-phone"></i> 
+                    <a href="tel:+8801518643371" class="contact-link">+8801518643371</a>
+                    </p>
+                    <p><i class="fas fa-map-marker-alt"></i> 
+                    <a href="https://www.google.com/maps/place/Dhaka,+Bangladesh" target="_blank" class="contact-link">Dhaka, Bangladesh</a>
+                    </p>
+                </div>
 
                 <div class="footer-section">
                     <h3>Connect With Me</h3>
